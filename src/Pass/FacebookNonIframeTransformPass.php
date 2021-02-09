@@ -136,11 +136,15 @@ class FacebookNonIframeTransformPass extends BaseFacebookPass
             $height = $card ? self::DEFAULT_HEIGHT_WITH_CARD : self::DEFAULT_HEIGHT;
         }
 
+        // Locale.
+        $locale = $el->attr('data-locale');
+
         return [
             'data-href' => $src,
             'data-embed-as' => $embed_as,
             'height' => $height,
-            'width' => $width
+            'width' => $width,
+            'data-locale' => $locale,
         ];
     }
 }
